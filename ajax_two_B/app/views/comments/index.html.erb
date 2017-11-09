@@ -14,12 +14,13 @@
 		$.ajax({
 			url: '<%= comments_path %>',
 			type: 'POST',
-			dataType: 'script',
-			data: {comment: {content: 'comentario via ajax enviado a tabla comments al campo content'},}
+			dataType: 'json',
+			data: {comment: {content: 'comentario via ajax enviado a tabla comments al campo content con respuesta JSON'},}
 		})
 
-		.done(function() {
-			console.log("OK");
+		.done(function(data) {
+			console.log(data);
+			$("#comments").append(data.content);
 		})
 
 		.fail(function() {
@@ -28,8 +29,7 @@
 
 		.always(function() {
 			console.log("complete");
-		});
 
-		// luego carga la vista JS
+		});
 	});
 </script>
