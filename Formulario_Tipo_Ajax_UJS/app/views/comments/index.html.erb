@@ -1,0 +1,15 @@
+<iframe width="640" height="360" src="https://www.youtube.com/embed/1Ij4Wd8ISqM" frameborder="0" gesture="media" allowfullscreen></iframe>
+
+<h1>Comments#index</h1>
+<p>Find me in app/views/comments/index.html.erb</p>
+
+<%= form_with model: Comment.new do |f|  %>
+	<%= f.label :content %>
+	<%= f.text_field :content %>
+	<%= f.submit :enviar %>
+	<%=  %>
+<% end %>
+
+<div id = "comments_text_output">
+	
+</div>
